@@ -1,9 +1,8 @@
-// render data
-export const render = (data) => {
-  const main = document.querySelector('main');
-  const results = data.results;
-  console.dir(results);
-  results.forEach((item, i) => {
+export const render = async (data , id) => {
+  const main = document.querySelector(`#${id}`);
+  const results = await data.results;
+  console.dir(await results);
+  await results.forEach((item) => {
     const html = `
             <article>
               <h2>${item.titles[0]}</h2>
